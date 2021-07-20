@@ -4,13 +4,20 @@ let pageNumber = 0;
 // have the content for the pages
 
 const pages = [
-    
+    { copy: "A London-based web developer", background: "#edc7a9", circle: "#3e78ed"},
+    { copy: "Japanese denim enthusiast", background: "#a1fffe", circle: "#e34a47"},
+    { copy: "Available for collaboration", background: "#d3c7f3", circle: "#f7fe00"},
+    { copy: `Take a look <a href="#">what he's worked on</a> `, background: "#faffb8", circle: "#b472e6"}
 ]
 
 // pick relevant tags
 const nextTag = document.querySelector('footer img.next');
 const prevTag = document.querySelector('footer img.prev');
+const randomTag = document.querySelector('footer img.random')
 const outputTag = document.querySelector('h2');
+const circleTag = document.querySelector('section div.circle');
+const bodyTag = document.querySelector('body');
+
 
 // next function increases page number
 const next = function() {
@@ -34,9 +41,19 @@ const previous = function() {
     updateSection();
 }
 
+// pick and random slide
+
+const random = function() {
+    pageNumber = Math.floor(Math.random() * pages.length);
+
+    updateSection();
+}
+
 // this updates section content and style
 const updateSection = function() {
-    outputTag.innerHTML = pages[pageNumber];
+    outputTag.innerHTML = pages[pageNumber].copy;
+    circleTag.style.backgroundColor = pages[pageNumber].circle;
+    bodyTag.style.backgroundColor = pages[pageNumber].background;
 }
 
 
@@ -54,3 +71,8 @@ prevTag.addEventListener('click', function() {
    
 })
 
+// on click of random tag, run this
+
+randomTag.addEventListener('click', function() {
+    random()
+});
