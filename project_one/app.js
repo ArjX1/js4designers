@@ -53,3 +53,5 @@ prevTag.addEventListener('click', function() {
     previous();
    
 })
+
+console.log('Hello World');
