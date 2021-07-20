@@ -74,5 +74,29 @@ prevTag.addEventListener('click', function() {
 // on click of random tag, run this
 
 randomTag.addEventListener('click', function() {
+    
     random()
+});
+
+
+// when user presses key check for arrow left or right
+// and go back or forward accordingly
+
+document.addEventListener("keyup", function(event) {
+    console.log(event)
+
+    // if key being pressed is ArrowRight
+    if (event.key == "ArrowRight") {
+        next();
+    }
+
+    // if key being pressed is ArrowLeft
+    if (event.key == "ArrowLeft") {
+        previous();
+    }
+
+     // if key being pressed is ArrowUp
+     if (event.key == "ArrowUp") {
+        random();
+    }
 });

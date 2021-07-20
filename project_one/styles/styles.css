@@ -40,6 +40,11 @@ section div.circle {
     transition: background-color 0.5s;
 }
 
+section a {
+    color: #222;
+}
+
+
 footer {
     position: fixed;
     bottom: 0;
@@ -54,4 +59,5 @@ footer {
 
 footer img {
     margin: 0 10px;
+    cursor: pointer;
 }
